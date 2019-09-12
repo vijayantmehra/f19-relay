@@ -12,7 +12,7 @@ September 23, 2019
 Data is the new ~~gold~~ ~~oil~~ ~~buzzword~~ &mdash; err money-maker.
 There is so much data running through the tubes of the internet every
 millisecond! It is of great interest to computer scientists to increase
-the throughput of this data to feed the many many systems that power our
+the throughput of this data to feed the many, many systems that power our
 emails, search engines, web trackers, social media networks, targetted
 advertising platforms, etc. etc. etc. etc.
 
@@ -28,14 +28,17 @@ Piper folks a run for their money!
 
 Your task will be to create a _run-length_ encoding scheme for
 plain-text data. This scheme will _encode_ the data _losslessly_
-such that when _decoded_ the original message is extracted in full.
+such that when _decoded_ the original message is extracted, unchanged,
+in full.
 
 ### The algorithm
 
 Given a _plain text_ file, we will call a subset of the text that
 consists of repeating symbols a _block_. A block will be _encoded_ by
 counting the block size and recording the _size_ followed by the block
-_symbol_.
+_symbol_. A block symbol is a single character. You may assume that we
+are dealing only with ASCII, and that each character is only one (1)
+byte.
 
 A _plain text_ will be encoded as a set of _encoded blocks_.
 
@@ -49,32 +52,41 @@ clever designed a mitigation. They say that in the case of a numeric
 _symbol_, you should separate the _size_ from the _symbol_ with the
 ASCII character `0x2` (STX, start of text).
 
+For non-numeric compression blocks, no STX character will be used to
+delimit the _size_ and the _symbol_.
+
 In python, you can add a STX character to a string with the escape
 sequence `\x02`.
 
-## Additional constraints
+## Assumptions and constraints
 
- - You _must_ write your solution using Python 3 code. Yes, even if you
-   don't know it. See the syntax primer.
- - You _cannot_ use the Internet! Moderators will be spying on you to
+ - You may assume that input to your programs will always be valid.
+   You do not need to write any error checking code.
+ - You *must* write your solution using Python 3 code.
+   Yes, even if you don't know it. See the syntax primer.
+ - You *may not* use the Internet! Moderators will be spying on you to
    make sure you don't cheat!
  - Every 20 minutes there will be a rotation within your group. Make
-   sure your teammates can pick up where you left off!
+   sure your teammates can pick up where you left off! There will be a
+   total of two (2) rotations, so that you will work on each project for
+   20 minutes.
+
+\pagebreak
 
 ## Operating modes
 
 Your software will need to operate in two modes:
 
- 1. `c`: "compression"
- 2. `x`: "decompression"
+ 1. `c`: compression
+ 2. `x`: decompression
 
-In "compression" mode, your software will need to parse plain text
+In _compression_ mode, your software will need to parse plain text
 files, encoding them as described by the algorithm above.
 
-In "decompression" mode, your software will need to parse encoded
+In _decompression_ mode, your software will need to parse encoded
 text, and decode it to output the original plain text.
 
-Your program should be run like this for "compression" mode:
+Your program should be run like this for compression mode:
 
 ```
 ./rle.py c file.txt
