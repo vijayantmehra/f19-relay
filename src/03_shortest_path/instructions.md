@@ -19,17 +19,21 @@ RIGHT turns, an amount of time the user should walk forward, and an
 ARRIVAL event.
 
 Freerunner makes some assumptions about the world by abstracting
-physical land into unit blocks. It assumes that it takes one (1) time
-unit to travel forward one (1) block.
+physical land into unit blocks. It assumes that:
+
+ - it takes one (1) time unit to travel forward one (1) block
+ - turns happen in place (i.e. turning does not move you off of a block)
+ - and turning takes no time
 
 For example, a series of instructions `10R1L3R1A` indicates that a user
 should travel straight for 10 blocks, make a 90 degree right turn,
 travel forward 1 block, make a 90 degree left turn, travel forward 3
 blocks, then make a 90 degree right turn to arrive at their destination.
+This takes a total of 15 time units.
 
 Furthermore, Freerunner is an app for parkour enthusiasts who want to
 get from one place to another as quickly as possible. It aims to
-generate the shortest paths, even traversing through building and other
+generate the shortest paths, even traversing through buildings and other
 obstacles, because users will find a creative way around them.
 
 Unfortunately, due to a bug in the mapping software, the open-world
@@ -68,6 +72,7 @@ Imagine that you live in a city bound by the following 10 block by 10
 block grid. You begin in the place marked $S$, and want to arrive at the
 place marked $E$.
 
+\vspace{10pt}
 ```
 +-+-+-+-+-+-+-+-+-##E
 +-+-+-+-+-+-+-+-###-+
@@ -80,14 +85,18 @@ place marked $E$.
 +-###-+-+-+-+-+-+-+-+
 S##-+-+-+-+-+-+-+-+-+
 ```
+\vspace{10pt}
 
 The shortest route is depicted in the grid by `#` signs.
 
 This path is represented by the string `0R1L1R1L1R1L1R...1L1R1L1R1A`.
 
+\vspace{20pt}
+
 Freerunner will unfortunately generate instructions that might create a
 long path like this:
 
+\vspace{10pt}
 ```
 +-+-+-+-+-+-+-+-+-+-E
 +-+-+-+-+-+-+-###-+-#
@@ -100,11 +109,14 @@ long path like this:
 +-+-#-+-+-+-+-+-+-+-+
 S####-+-+-+-+-+-+-+-+
 ```
+\vspace{10pt}
 
 This route is described by the string `0R2L3L2R2R4R2L3L5R1R1L2L2A`.
 
 Such a path might avoid buildings, etc. but it's absolutely no good for
 the parkour enthusiasts that Freerunner is targeting!
+
+\pagebreak
 
 ## Input format
 
@@ -112,6 +124,9 @@ The input to your program will be a sequence of repeated letters and
 numbers. There will always be at least one number before the next
 letter. Instructions that indicate turning in place may appear with a
 `0` prefix.
+
+This input string may be described by the following regular expression:
+`([0-9]+[LR])*[0-9]+A`
 
 For example, the following are valid navigation instructions:
 
@@ -140,7 +155,8 @@ You can validate the correctness of your program if, when an output from
 your program is fed as the input, the same path is produced as the
 output.
 
-The most trivial case of this would be
+The most trivial case of this would be, as there are no possible
+optimizations to be made.
 
 $$0A \rightarrow program \rightarrow 0A$$
 
@@ -159,6 +175,9 @@ path to the output file.
 
 If no output file is supplied, then your program should print
 the results to the console (`stdout`).
+
+If an output file is specified and exists, your program should
+**overwrite** the specified file.
 
 In other words, your program should be able to run like this:
 

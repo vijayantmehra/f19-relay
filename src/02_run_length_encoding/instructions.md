@@ -48,7 +48,7 @@ _symbol_.
 It is possible the original text will contain numbers. You might notice
 this is problematic since numbers denote _size_ in our encoding
 scheme. Your friend knows about non-printable ASCII characters and has
-clever designed a mitigation. They say that in the case of a numeric
+cleverly designed a mitigation. They say that in the case of a numeric
 _symbol_, you should separate the _size_ from the _symbol_ with the
 ASCII character `0x2` (STX, start of text).
 
@@ -163,6 +163,12 @@ options.
 Where MODE is a single character, with valid options `c` and `x`, INPUT
 is the path to an input text file, and OUTPUT is an optional path to the
 output file.
+
+If no output file is supplied, then your program should print
+the results to the console (`stdout`).
+
+If an output file is specified and exists, your program should
+**overwrite** the specified file.
 
 In other words, your program should be able to run in each of the
 following ways:
