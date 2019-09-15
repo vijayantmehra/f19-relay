@@ -34,16 +34,12 @@ in full.
 ### The algorithm
 
 Given a _plain text_ file, we will call a subset of the text that
-consists of repeating symbols a _block_. A block will be _encoded_ by
-counting the block size and recording the _size_ followed by the block
-_symbol_. A block symbol is a single character. You may assume that we
-are dealing only with ASCII, and that each character is only one (1)
-byte.
+consists of repeating symbols a _block_.
 
-A _plain text_ will be encoded as a set of _encoded blocks_.
-
-The compressed output will be a repeating sequence of _size_ followed by
-_symbol_.
+A block will be _encoded_ by counting the block size and recording the
+_size_ followed by the block _symbol_. A block symbol is a single
+character. You may assume that we are dealing only with ASCII, and that
+each character is only one (1) byte.
 
 It is possible the original text will contain numbers. You might notice
 this is problematic since numbers denote _size_ in our encoding
@@ -58,6 +54,17 @@ delimit the _size_ and the _symbol_.
 In python, you can add a STX character to a string with the escape
 sequence `\x02`.
 
+An _encoded block_ will therefore match one of the following patterns:
+
+ - `[0-9]+<STX>[0-9]`
+ - `[0-9]+[a-zA-Z]`
+
+defined as (_size_, _possible STX_, _symbol_).
+
+The encoded output will be a sequence of these blocks.
+
+\pagebreak
+
 ## Assumptions and constraints
 
  - You may assume that input to your programs will always be valid.
@@ -71,7 +78,6 @@ sequence `\x02`.
    total of two (2) rotations, so that you will work on each project for
    20 minutes.
 
-\pagebreak
 
 ## Operating modes
 
@@ -168,7 +174,7 @@ If no output file is supplied, then your program should print
 the results to the console (`stdout`).
 
 If an output file is specified and exists, your program should
-**overwrite** the specified file.
+**overwrite** the specified file. Otherwise, it should create it.
 
 In other words, your program should be able to run in each of the
 following ways:

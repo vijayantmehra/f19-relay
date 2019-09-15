@@ -159,7 +159,7 @@ If no output file is supplied, then your program should print
 the results to the console (`stdout`).
 
 If an output file is specified and exists, your program should
-**overwrite** the specified file.
+**overwrite** the specified file. Otherwise, it should create it.
 
 In other words, your program should be able to run like this:
 
