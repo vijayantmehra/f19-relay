@@ -7,6 +7,12 @@ aimed to be beginner-intermediate difficulty.
 
 The workshop should take one (1) hour.
 
+## For Participants
+
+To get started, simply run the `setup.sh` script in this directory.
+
+You can stop reading here and await further instructions.
+
 
 ## Challenge descriptions
 
