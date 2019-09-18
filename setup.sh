@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DEBUG_ENABLED=1
+DEBUG_ENABLED=0
 
 # Will disable prints if DEBUG_ENABLED is 0.
 function debug() {
