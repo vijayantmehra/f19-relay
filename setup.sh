@@ -39,6 +39,20 @@ echo "I'm going to ask you some questions before we get started."
 echo ''
 
 valid=0
+while ((valid == 0 )); do
+    read -p 'Has each of your teammates forked https://github.com/GuelphCodingCommunity/f19-relay and added you as a collaborator? [y/n]: ' yn
+    case $yn in
+        y* | Y*)
+            valid=1
+            ;;
+        n* | N*)
+            echo 'Please do so before continuing.'
+            exit 1
+            ;;
+    esac
+done
+
+valid=0
 while (( valid == 0 )); do
     read -p 'What challenge number have you been assigned? [1/2/3]: ' challenge
     if (( challenge < 1 )) || (( challenge > 3)); then
