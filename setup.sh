@@ -86,7 +86,8 @@ echo 'I am about to clone some repositories.'
 
 valid=0
 while (( valid == 0 )); do
-    read -p 'Would you like to use SSH or HTTPS? [SSH/HTTPS]: ' protocol
+    echo 'Would you like to clone using SSH or HTTPS?'
+    read -p "Pick HTTPS if you don't know what this means. [SSH/HTTPS]: " protocol
 
     case "$protocol" in
         "ssh" | "SSH")
@@ -111,7 +112,6 @@ mkdir -p 'f19-relay'
 other_challenges=("${other_challenges[@]}")
 team=("${team[@]}")
 
-
 # Clone the repositories.
 baseurl=''
 case "$protocol" in
@@ -127,12 +127,13 @@ case "$protocol" in
         ;;
 esac
 
-
 echo 'Cloning team mate repositories...'
 git clone "$baseurl$me/f19-relay.git" "f19-relay/challenge_$challenge"
 debug git clone "$baseurl$me/f19-relay.git" "f19-relay/challenge_$challenge"
+
 git clone "$baseurl${team[0]}/f19-relay.git" "f19-relay/challenge_${other_challenges[0]}"
 debug git clone "$baseurl${team[0]}/f19-relay.git" "f19-relay/challenge_${other_challenges[0]}"
+
 git clone "$baseurl${team[1]}/f19-relay.git" "f19-relay/challenge_${other_challenges[1]}"
 debug git clone "$baseurl${team[1]}/f19-relay.git" "f19-relay/challenge_${other_challenges[1]}"
 echo 'Cloned.'
@@ -141,7 +142,6 @@ echo ''
 echo "Bootstrapping your project for challenge $challenge..."
 dir=$PWD
 cd "f19-relay/challenge_$challenge"
-
 
 cat <<EOF > $my_program
 #!/usr/bin/env python3
@@ -161,7 +161,6 @@ EOF
 chmod +x $my_program
 
 cd $dir
-
 
 echo "Bootstrapped!"
 echo "Please wait for further instruction!"
