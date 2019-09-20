@@ -182,8 +182,6 @@ def func2(arg1, arg2):
 
 Classes allow the grouping of data with functions.
 
-**TODO**: Add to this description
-
 ### Example
 
 ```python
@@ -233,5 +231,5 @@ def main(args):
     return 0
 
 if __name__ == "__main__":
-    main(sys,argv)
+    main(sys.argv)
 ```
