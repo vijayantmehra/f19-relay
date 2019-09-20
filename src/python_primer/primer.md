@@ -206,3 +206,21 @@ with open("file2.txt", "w") as f:
 ```
 
 ## Main and Arguments
+
+While python scripts can be run without a main function, it's best to run them
+with one. Getting command line arguments is also very useful, especially in
+programming competitions
+
+```python
+import sys
+
+def main(arg1, arg2):
+    pass
+
+if __name__ == "__main__":
+    # Getting the number of arguments (including the name of the program)
+    print(len(sys.argv))
+    arg1 = sys.argv[1]
+    arg2 = sys.argv[2]
+    main(arg1, arg2)
+```
