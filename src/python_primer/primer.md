@@ -129,6 +129,31 @@ print(l)
 
 ## Dictionaries
 
+Dictionaries (also know as hashmaps) are sets of key-value pairs. Both the keys
+and values are heterogeneous and can be of mixed types. THe key-value pairs are
+stored in arbitrary order. The value is retrieved using the key.
+
+```python
+# create and empty dictionary
+d = {}
+# Create a dictionary with 2 key-value pairs
+d = {"foo": True, "bar": 3.14}
+
+# Accessing a value
+print(d["bar"])
+# >>> 3.14
+
+# Adding a key-value pair
+d['new'] = "Wowee, Python is cool"
+
+# Iterate over key-value pairs
+for k, v in d.items():
+    print(f"Key: {k}, Value: {v}")
+# >>> Key: foo, Value: True
+# >>> Key: bar, Value: 3.14
+# >>> Key: new, Value: Wowee, Python is cool
+```
+
 ## Classes
 
 ## Files
