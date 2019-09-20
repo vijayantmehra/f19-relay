@@ -133,6 +133,8 @@ Dictionaries (also know as hashmaps) are sets of key-value pairs. Both the keys
 and values are heterogeneous and can be of mixed types. THe key-value pairs are
 stored in arbitrary order. The value is retrieved using the key.
 
+### Example
+
 ```python
 # create and empty dictionary
 d = {}
@@ -158,6 +160,8 @@ for k, v in d.items():
 
 **TODO**: description. Please suggest.
 
+### Example
+
 ```python
 # declare a function
 def func():
@@ -175,6 +179,8 @@ def func2(arg1, arg2):
 Classes allow the grouping of data with functions.
 
 **TODO**: Add to this description
+
+### Example
 
 ```python
 class TestClass:
@@ -194,6 +200,8 @@ class TestClass:
 
 File IO is one of the basic ways of getting input for a program.
 
+### Example
+
 ```python
 # Open a file for reading
 with open("file.txt", 'r') as f:
@@ -210,6 +218,8 @@ with open("file2.txt", "w") as f:
 While python scripts can be run without a main function, it's best to run them
 with one. Getting command line arguments is also very useful, especially in
 programming competitions
+
+### Example
 
 ```python
 import sys
