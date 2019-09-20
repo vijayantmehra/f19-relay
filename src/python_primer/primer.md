@@ -192,4 +192,17 @@ class TestClass:
 
 ## Files
 
+File IO is one of the basic ways of getting input for a program.
+
+```python
+# Open a file for reading
+with open("file.txt", 'r') as f:
+    for line in f:
+        print(line)
+
+# Write to a file
+with open("file2.txt", "w") as f:
+    f.write("foobar")
+```
+
 ## Main and Arguments
