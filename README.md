@@ -7,6 +7,12 @@ aimed to be beginner-intermediate difficulty.
 
 The workshop should take one (1) hour.
 
+## For Participants
+
+To get started, simply run the `setup.sh` script in this directory.
+
+You can stop reading here and await further instructions.
+
 
 ## Challenge descriptions
 
@@ -36,24 +42,16 @@ pandoc -o instructions.pdf instructions.md
    everyone has done this!
 
 5. Once everyone has a fork, ensure that each person in each team has
-   exchanged their repository URLs. They should record them in a file
-   like so:
-   ```
-   # Challenge one
-   https://github.com/ParticipantOne/f19-relay.git
+   exchanged their usernames.
 
-   # Challenge two
-   https://github.com/ParticipantTwo/f19-relay.git
+   Have them run the `setup.sh` script and follow the prompts.
 
-   # Challenge three
-   https://github.com/ParticipantThree/f19-relay.git
-   ```
    Each participant will begin working in their own repository, and by
    the end of the work shop, they will have worked in each of them.
 
 6. When everyone is ready, start the timer and tell groups to open the
-   `challenge_01`, `challenge_02`, or `challenge_03` folder as according
-   to the number they were assigned.
+   `challenge_01`, `challenge_02`, or `challenge_03` documents as
+   according to the number they were assigned.
 
    Participants will now be allowed to read their instructions and begin
    coding.

@@ -70,6 +70,10 @@ Imagine that you live in a city bound by the following 10 block by 10
 block grid. You begin in the place marked $S$, and want to arrive at the
 place marked $E$.
 
+In the below diagrams, the person is facing forward. Before turning,
+"forward" is "up". In both routes below, the first instruction is to
+turn right. This is not always the case though!
+
 \vspace{10pt}
 ![19 block direct route from start to end](img/ex1.png){ width=50% }
 \vspace{10pt}
@@ -134,10 +138,11 @@ describes the shortest path.
 You can validate the correctness of your program if given a shortest
 path as input, the same path is produced as the output.
 
-The most trivial case of this would be, as there are no possible
-optimizations to be made.
+The most trivial case of this would be:
 
 $$0A \rightarrow program \rightarrow 0A$$
+
+as there are no possible optimizations to be made.
 
 It may be the case that there are multiple shortest paths. Ensure that
 your program is _consistent_ in how it picks which one to output.
