@@ -154,7 +154,41 @@ for k, v in d.items():
 # >>> Key: new, Value: Wowee, Python is cool
 ```
 
+## Functions
+
+**TODO**: description. Please suggest.
+
+```python
+# declare a function
+def func():
+    # Do nothing
+    pass
+
+# Function with arguments
+def func2(arg1, arg2):
+    # returning values
+    return arg1 + arg2
+```
+
 ## Classes
+
+Classes allow the grouping of data with functions.
+
+**TODO**: Add to this description
+
+```python
+class TestClass:
+
+    # Constructor function
+    def __init__(self, val):
+        # Creating an instance variable
+        self.instance_variable = val
+
+    # Instance function
+    def some_func(self, input_val):
+        print(input_val)
+        return input_val / 2
+```
 
 ## Files
 
