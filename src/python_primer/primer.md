@@ -1,14 +1,19 @@
 # Python Basics
 
-The purpose of this document is not to make you a Python wizard, it is only to show the most basic syntax of the language in order for you to be able to make a basic program.
+The purpose of this document is not to make you a Python wizard, it is only to
+show the most basic syntax of the language in order for you to be able to make
+a basic program.
 
 ## Variables
 
-Variables are declared with only its name and value and are _not_ declared with a type, Python will figure that out for you. There is also the special value of `None`, which is Python's null value.
+Variables are declared with only its name and value and are _not_ declared with
+a type, Python will figure that out for you. There is also the special value of
+`None`, which is Python's null value.
 
 ### Strings
 
-Strings are variables containing letters. They have a length, they can be concatenated and they can be indexed.
+Strings are variables containing letters. They have a length, they can be
+concatenated and they can be indexed.
 
 ### Examples
 
@@ -34,11 +39,16 @@ print(word + " forever")
 
 print(word[0:3])
 # >>> foo
+
+# String formatting
+print(f"Wow, I love {word}. 2 + 2 = {2 + 2}")
+# >>> Wow, I love foobar. 2 + 2 = 4
 ```
 
 ## Conditionals
 
-The path of the program can be changed through the use of conditionals (if statements).
+The path of the program can be changed through the use of conditionals (if
+statements).
 
 ### Examples
 
@@ -62,7 +72,8 @@ else:
 
 ## Loops
 
-Python has two kinds of loops `for` loops and `while` loops. `for` loops enumerate over iterators, `while` loops loop until the condition becomes falsy.
+Python has two kinds of loops `for` loops and `while` loops. `for` loops
+enumerate over iterators, `while` loops loop until the condition becomes falsy.
 
 ### Examples
 
@@ -89,7 +100,9 @@ print(x)
 
 ## Lists
 
-Lists are collections that contain other variables in a specific order. Lists are heterogeneous, meaning the elements of the list can be of any type, and of mixed type.
+Lists are collections that contain other variables in a specific order. Lists
+are heterogeneous, meaning the elements of the list can be of any type, and of
+mixed type.
 
 ### Examples
 
