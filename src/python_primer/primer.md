@@ -130,13 +130,13 @@ print(l)
 ## Dictionaries
 
 Dictionaries (also know as hashmaps) are sets of key-value pairs. Both the keys
-and values are heterogeneous and can be of mixed types. THe key-value pairs are
+and values are heterogeneous and can be of mixed types. The key-value pairs are
 stored in arbitrary order. The value is retrieved using the key.
 
 ### Example
 
 ```python
-# create and empty dictionary
+# Create and empty dictionary
 d = {}
 # Create a dictionary with 2 key-value pairs
 d = {"foo": True, "bar": 3.14}
@@ -158,19 +158,23 @@ for k, v in d.items():
 
 ## Functions
 
-**TODO**: description. Please suggest.
+Functions divide your program into reusable, logical sections.
+
+In Python, you don't need to declare the return type of a function, but you do
+need to declare the names of arguments that are passed to it.
+
 
 ### Example
 
 ```python
-# declare a function
+# Declare a function
 def func():
     # Do nothing
     pass
 
 # Function with arguments
 def func2(arg1, arg2):
-    # returning values
+    # Returning values
     return arg1 + arg2
 ```
 
@@ -203,12 +207,12 @@ File IO is one of the basic ways of getting input for a program.
 ### Example
 
 ```python
-# Open a file for reading
+# Open a file for reading, and print each line
 with open("file.txt", 'r') as f:
     for line in f:
         print(line)
 
-# Write to a file
+# Create (overwrite) a new file and write to it
 with open("file2.txt", "w") as f:
     f.write("foobar")
 ```
@@ -224,13 +228,10 @@ programming competitions
 ```python
 import sys
 
-def main(arg1, arg2):
-    pass
+def main(args):
+    print(f"Hello from {args[0]}")
+    return 0
 
 if __name__ == "__main__":
-    # Getting the number of arguments (including the name of the program)
-    print(len(sys.argv))
-    arg1 = sys.argv[1]
-    arg2 = sys.argv[2]
-    main(arg1, arg2)
+    main(sys,argv)
 ```
