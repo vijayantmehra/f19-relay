@@ -162,8 +162,24 @@ chmod +x $my_program
 
 cd $dir
 
-echo "Bootstrapped!"
-echo "Please wait for further instruction!"
-echo ""
-echo "When it's time, open f19-relay/challenge_$challenge/$my_program and start coding!"
-echo ""
+# check that all 3 challenges were cloned successfully
+num=$(ls f19-relay | wc -l)
+if [ $num -ne "3" ]; then
+
+    printf "\e[1;31mERROR: Not all the challenges were downloaded \e[0m\n"
+    printf "\e[1;93mPlease check that all the repositories have been cloned and that you entered the user names correctly\e[0m\n"
+
+    echo "Challenge $challenge: $me"
+    echo "Challenge ${other_challenges[0]}: ${team[0]}"
+    echo "Challenge ${other_challenges[1]}: ${team[1]}"
+
+    echo ""
+else
+
+    printf "\e[92mBootstrapped!\e[0m\n"
+    printf "\e[1;93mPlease wait for further instruction!\e[0m\n"
+    echo ""
+    echo "When it's time, open f19-relay/challenge_$challenge/$my_program and start coding!"
+    echo ""
+
+fi
